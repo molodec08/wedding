@@ -1,0 +1,13 @@
+.guests {
+    background-image: url('../../img/h2-background-img-2.jpg');
+    background-repeat: no-repeat;
+}
+.guests-list {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item {
+    width: 23%;
+}
