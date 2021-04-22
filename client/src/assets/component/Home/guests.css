@@ -1,3 +1,9 @@
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
 .guests {
     background-image: url('../../img/h2-background-img-2.jpg');
     background-repeat: no-repeat;
@@ -6,8 +12,32 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .item {
     width: 23%;
+}
+@media (max-width:1200px) {
+    .item {
+        width: 28%;
+        margin: 10px;
+    }
+}
+
+@media (max-width:992px) {
+    .item {
+        width: 35%;
+    }
+}
+
+@media (max-width:767px) {
+    .guests-list {
+        margin: 0 30px;
+    }
+}
+
+@media (max-width:480px) {
+    .item {
+        width: 50%;
+    }
 }

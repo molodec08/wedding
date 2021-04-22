@@ -8,6 +8,16 @@
         </div>
       </div>
     </div>
+    <div class="img-block">
+      <img src="../../assets/img/img-1.png" alt="bg-img-flowers" />
+    </div>
+    <div class="img-block">
+      <img
+        class="round-img"
+        src="../../assets/img/min-header-img.jpg"
+        alt="bg-img-flowers"
+      />
+    </div>
   </header>
 </template>
 

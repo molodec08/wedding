@@ -5,6 +5,6 @@ const schema = new Schema({
     desc: {type: String},
     img: {type: String},
     active: {type: Boolean}
-})
+});
 
-module.exports = model('Guests', schema)
+module.exports = model('Guests', schema);

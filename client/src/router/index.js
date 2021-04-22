@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home";
 import Login from "../views/Login";
 import AdminPanel from "../views/AdminPanel";
-import About from "../views/About";
+import DescriptionEvent from "../views/DescriptionEvent";
 import Guests from "../views/Guests";
 import UpdateGuest from "../components/Guests/UpdateGuest";
 
@@ -29,9 +29,9 @@ const router = createRouter({
       meta: { auth: true },
       children: [
         {
-          path: "/about",
-          name: "About",
-          component: About,
+          path: "/description-event",
+          name: "DescriptionEvent",
+          component: DescriptionEvent,
           meta: { auth: true }
         },
         {

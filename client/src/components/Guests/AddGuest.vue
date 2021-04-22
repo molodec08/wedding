@@ -3,20 +3,20 @@
     <div class="flex flex-col px-6 mt-3">
       <label class="text-gray-700" for="fio">ФИО</label>
       <input
-        class="w-full mt-2 rounded-md focus:border-indigo-600"
-        type="text"
-        id="fio"
         v-model="form.name"
+        id="fio"
+        type="text"
+        class="w-full mt-2 rounded-md focus:border-indigo-600"
       />
     </div>
 
     <div class="flex flex-col px-6 mt-3">
       <label class="text-gray-700" for="phone">Профессия</label>
       <input
-        class="w-full mt-2 rounded-md focus:border-indigo-600"
-        type="text"
-        id="phone"
         v-model="form.desc"
+        id="phone"
+        type="text"
+        class="w-full mt-2 rounded-md focus:border-indigo-600"
       />
     </div>
 
@@ -25,8 +25,8 @@
       <input
         @change="fileUpload"
         ref="file"
-        type="file"
         id="photo"
+        type="file"
         class="w-full mt-2 rounded-md focus:border-indigo-600"
       />
     </div>
@@ -34,8 +34,8 @@
     <div class="flex flex-col px-6 mt-3">
       <label class="text-gray-700" for="status">Статус</label>
       <select
-        id="status"
         v-model="form.active"
+        id="status"
         class="w-full mt-2 rounded-md focus:border-indigo-600"
       >
         <option value="false">Выключен</option>
@@ -71,11 +71,14 @@ export default {
   },
   methods: {
     fileUpload() {
-      let file = this.$refs.file.files[0];
-      this.formData.append("file", file);
+      this.addFormData();
       this.$store
         .dispatch(FILE_UPLOAD, this.formData)
         .then(data => (this.form.img = data));
+    },
+    addFormData() {
+      let file = this.$refs.file.files[0];
+      this.formData.append("file", file);
     },
     onSubmit(emit) {
       this.$store.dispatch(INSERT_GUEST, this.form);

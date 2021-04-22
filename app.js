@@ -31,12 +31,7 @@ app.use(cors());
 app.use('/', express.static(path.join(__dirname, '../dist')));
 app.use('/auth', require('./routes/auth.routes'));
 app.use('/guests', require('./routes/guests.routes'));
-
-
-// app.use('/api/link', require('./routes/link.routes'));
-// app.use('/api/cases', require('./routes/case.routes'));
-// app.use('/api/settings', require('./routes/settings.routes'));
-// app.use('/t', require('./routes/redirect.routes'));
+app.use('/description-event', require('./routes/desc.routes'));
 
 // if (process.env.NODE_ENV === 'production') {
 //     app.use('/', express.static(path.join(__dirname, 'client', 'build')));
