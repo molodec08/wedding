@@ -1,44 +1,46 @@
 <template>
-  <form @submit.prevent="onSubmit(form)" class="flex flex-col pb-3">
-    <div class="flex flex-col px-6 mt-3">
-      <label class="text-gray-700" for="fio">ФИО</label>
-      <input type="text" id="fio" v-model="form.name" :class="classInput" />
-    </div>
+  <div class="container max-w-7xl px-6 py-8">
+    <form @submit.prevent="onSubmit(form)" class="flex flex-col pb-3">
+      <div class="flex flex-col px-6 mt-3">
+        <label class="text-gray-700" for="fio">ФИО</label>
+        <input type="text" id="fio" v-model="form.name" :class="classInput" />
+      </div>
 
-    <div class="flex flex-col px-6 mt-3">
-      <label class="text-gray-700" for="phone">Профессия</label>
-      <input type="text" id="phone" v-model="form.desc" :class="classInput" />
-    </div>
+      <div class="flex flex-col px-6 mt-3">
+        <label class="text-gray-700" for="phone">Профессия</label>
+        <input type="text" id="phone" v-model="form.desc" :class="classInput" />
+      </div>
 
-    <div class="flex flex-col px-6 mt-3">
-      <label class="text-gray-700">Фото</label>
-      <img :src="form.img" alt="item1" class="w-1/4" />
-      <label class="text-gray-700" for="photo">Изменить</label>
-      <input
-        @change="fileUpload"
-        ref="file"
-        type="file"
-        id="photo"
-        :class="classInput"
-      />
-    </div>
+      <div class="flex flex-col px-6 mt-3">
+        <label class="text-gray-700">Фото</label>
+        <img :src="form.img" alt="item1" class="w-1/4" />
+        <label class="text-gray-700" for="photo">Изменить</label>
+        <input
+          @change="fileUpload"
+          ref="file"
+          type="file"
+          id="photo"
+          :class="classInput"
+        />
+      </div>
 
-    <div class="flex flex-col px-6 mt-3">
-      <label class="text-gray-700" for="status">Статус</label>
-      <select id="status" v-model="form.active" :class="classInput">
-        <option value="false">Выключен</option>
-        <option value="true">Включён</option>
-      </select>
-    </div>
-    <div class="flex flex-end mt-3 px-6">
-      <button
-        @click="$emit('close')"
-        class="px-3 py-2 bg-gray-800 rounded-md text-white font-medium tracking-wide hover:bg-gray-600"
-      >
-        Изменить
-      </button>
-    </div>
-  </form>
+      <div class="flex flex-col px-6 mt-3">
+        <label class="text-gray-700" for="status">Статус</label>
+        <select id="status" v-model="form.active" :class="classInput">
+          <option value="false">Выключен</option>
+          <option value="true">Включён</option>
+        </select>
+      </div>
+      <div class="flex flex-end mt-3 px-6">
+        <button
+          @click="$emit('close')"
+          class="px-3 py-2 bg-gray-800 rounded-md text-white font-medium tracking-wide hover:bg-gray-600"
+        >
+          Изменить
+        </button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>

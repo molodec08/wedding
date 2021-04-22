@@ -11,6 +11,7 @@ import { SET_GUESTS, SET_PATH_FILE } from "../mutations.type";
 
 const state = {
   guests: [],
+  guestsActive: [],
   guestsCount: 0,
   pathFile: ""
 };
@@ -79,6 +80,7 @@ const actions = {
 const mutations = {
   [SET_GUESTS](state, guests) {
     state.guests = guests;
+    state.guestsActive = guests.filter(item => item.active);
   },
   [SET_PATH_FILE](state, pathFile) {
     state.pathFile = pathFile;

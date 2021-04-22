@@ -23,7 +23,6 @@
                 Статус
               </th>
               <th class="px-8 py-3 border-b border-gray-200 bg-gray-100"></th>
-              <th class="px-8 py-3 border-b border-gray-200 bg-gray-100"></th>
             </tr>
           </thead>
 
@@ -54,7 +53,11 @@
 
               <td class="px-8 py-4 whitespace-nowrap border-b border-gray-200">
                 <span
-                  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+                  :class="{
+                    'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800':
+                      g.active,
+                    'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-500 text-white': !g.active
+                  }"
                   >{{ g.active }}</span
                 >
               </td>
@@ -69,16 +72,17 @@
                 >
                   <button
                     @click="navigate"
-                    class="text-indigo-600 hover:text-indigo-900"
+                    class="px-2 fill-current text-green-500 material-icons"
                   >
                     Edit
                   </button>
                 </router-link>
-              </td>
-              <td
-                class="px-8 py-4 whitespace-nowrap text-right border-b border-gray-200 text-sm leading-5 font-medium"
-              >
-                <button @click="deleteGuest(g._id)">Delete</button>
+                <button
+                  class="px-2 fill-current text-red-500 material-icons"
+                  @click="deleteGuest(g._id)"
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           </tbody>

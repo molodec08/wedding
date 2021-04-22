@@ -85,8 +85,12 @@
               </router-link>
 
               <router-link
-                to="/about"
-                :class="[$route.name === 'About' ? activeClass : inactiveClass]"
+                to="/description-event"
+                :class="[
+                  $route.name === 'DescriptionEvent'
+                    ? activeClass
+                    : inactiveClass
+                ]"
               >
                 О мероприятии
               </router-link>
